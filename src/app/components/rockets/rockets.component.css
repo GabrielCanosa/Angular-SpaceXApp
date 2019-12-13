@@ -1,0 +1,16 @@
+h5,p{
+    color: black;
+}
+
+.card-img-top{
+    height: 185px;
+    object-fit: cover;
+}
+
+.card-img-top:hover{
+    cursor: pointer;
+}
+
+.card-group{
+    opacity: 0.7;
+}

@@ -1,0 +1,40 @@
+<table class="table table-sm">
+  <thead>
+    <tr>
+      <th scope="col"><p>Flight number</p></th>
+      <th scope="col"><p>Mission name</p></th>
+      <th scope="col"><p>Rocket name</p></th>
+      <th scope="col"><p>Launch year</p></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let item of pagedItems">
+    <tr>
+      <th scope="row"><p>{{item.flight_number}}</p></th>
+      <td><p>{{item.mission_name}}</p></td>
+      <td><p>{{item.rocket.rocket_name}}</p></td>
+      <td><p>{{item.launch_year}}</p></td>
+      <td><button class="btn btn-primary" (click)="GetLaunchDetail(item.flight_number)">More info</button></td>
+    </tr>
+  </tbody>
+</table>
+
+<nav aria-label="Page navigation example">
+    <ul *ngIf="pager.pages && pager.pages.length" class="pagination justify-content-center">
+      <li class="page-item" [ngClass]="{disabled:pager.currentPage === 1}">
+          <a class="page-link" (click)="setPage(1)">First</a>
+      </li>
+      <li class="page-item" [ngClass]="{disabled:pager.currentPage === 1}">
+          <a class="page-link" (click)="setPage(pager.currentPage - 1)">Previous</a>
+      </li>
+      <li class="page-item" *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+          <a class="page-link" (click)="setPage(page)">{{page}}</a>
+      </li>
+      <li class="page-item" [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+          <a class="page-link" (click)="setPage(pager.currentPage + 1)">Next</a>
+      </li>
+      <li class="page-item" [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+          <a class="page-link" (click)="setPage(pager.totalPages)">Last</a>
+      </li>
+    </ul>
+</nav>

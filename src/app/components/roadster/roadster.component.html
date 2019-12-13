@@ -1,0 +1,12 @@
+<div class="carousel slide" data-ride="carousel" data-interval="7000">
+  <div class="carousel-inner">
+    <div *ngFor="let image of roadster.flickr_images; let i = index" 
+          class="carousel-item" [ngClass]="{'active' : i == 1}">
+        <img [src]="image" class="d-block w-100">
+        <div class="carousel-caption d-none d-md-block carousel-text">
+            <h5>{{roadster.name}}</h5>
+            <a [href]="roadster.wikipedia"><p>{{roadster.wikipedia}}</p></a>
+        </div>
+    </div>
+  </div>
+</div>

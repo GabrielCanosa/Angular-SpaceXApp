@@ -1,0 +1,143 @@
+<div class="row">
+  <div class="col-sm-4">
+    <h3>{{launch.mission_name}}</h3>
+    <br />
+    <img id="launchImage" [src]="image" alt="">
+    <br /><br />
+    <p>{{launch.details}}</p>
+  </div>
+  <div class="col-sm-8">
+
+        <ul id="tabs" class="nav nav-tabs" role="tablist">
+                <li class="nav-item">
+                    <a id="tab-A" href="#pane-A" class="nav-link active" data-toggle="tab" role="tab">
+                      Article
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a id="tab-B" href="#pane-B" class="nav-link" data-toggle="tab" role="tab">
+                      Youtube
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a id="tab-C" href="#pane-C" class="nav-link" data-toggle="tab" role="tab">
+                      Wikipedia
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a id="tab-D" href="#pane-D" class="nav-link" data-toggle="tab" role="tab">
+                        Presskit
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a id="tab-E" href="#pane-E" class="nav-link" data-toggle="tab" role="tab">
+                        Reddit launch
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a id="tab-F" href="#pane-F" class="nav-link" data-toggle="tab" role="tab">
+                        Reddit media
+                    </a>
+                </li>
+            </ul>
+        
+            <div id="content" class="tab-content" role="tablist">
+                <div id="pane-A" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-A">
+                    <div class="card-header" role="tab" id="heading-A">
+                        <h5 class="mb-0">
+                            <a data-toggle="collapse" href="#collapse-A" aria-expanded="true" aria-controls="collapse-A">
+                                Article
+                            </a>
+                        </h5>
+                    </div>
+                    <div id="collapse-A" class="collapse show" data-parent="#content" role="tabpanel" aria-labelledby="heading-A">
+                        <div class="card-body">
+                            <a [href]="launch.links.article_link"><span>{{launch.links.article_link}}</span></a>
+                        </div>
+                    </div>
+                </div>
+        
+                <div id="pane-B" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-B">
+                    <div class="card-header" role="tab" id="heading-B">
+                        <h5 class="mb-0">
+                            <a class="collapsed" data-toggle="collapse" href="#collapse-B" aria-expanded="false" aria-controls="collapse-B">
+                                Youtube
+                            </a>
+                        </h5>
+                    </div>
+                    <div id="collapse-B" class="collapse" data-parent="#pane-B" role="tabpanel" aria-labelledby="heading-B">
+                        <div class="card-body">
+                            <p>
+                                <iframe width="560" height="315" [src]="getVideoIframe(launch.links.video_link)" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+        
+                <div id="pane-C" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-C">
+                    <div class="card-header" role="tab" id="heading-C">
+                        <h5 class="mb-0">
+                            <a class="collapsed" data-toggle="collapse" href="#collapse-C" aria-expanded="false" aria-controls="collapse-C">
+                                Wikipedia
+                            </a>
+                        </h5>
+                    </div>
+                    <div id="collapse-C" class="collapse" role="tabpanel" data-parent="#pane-C" aria-labelledby="heading-C">
+                        <div class="card-body">
+                            <a [href]="launch.links.wikipedia"><span>{{launch.links.wikipedia}}</span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="pane-D" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-D">
+                    <div class="card-header" role="tab" id="heading-D">
+                        <h5 class="mb-0">
+                            <a class="collapsed" data-toggle="collapse" href="#collapse-D" 
+                               aria-expanded="false" aria-controls="collapse-D">
+                                Presskit
+                            </a>
+                        </h5>
+                    </div>
+                    <div id="collapse-D" class="collapse" role="tabpanel" data-parent="#pane-D" aria-labelledby="heading-D">
+                        <div class="card-body">
+                            <a [href]="launch.links.presskit"><span>{{launch.links.presskit}}</span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="pane-E" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-E">
+                    <div class="card-header" role="tab" id="heading-E">
+                        <h5 class="mb-0">
+                            <a class="collapsed" data-toggle="collapse" href="#collapse-E" 
+                               aria-expanded="false" aria-controls="collapse-E">
+                               Reddit launch
+                            </a>
+                        </h5>
+                    </div>
+                    <div id="collapse-E" class="collapse" role="tabpanel" data-parent="#pane-E" aria-labelledby="heading-E">
+                        <div class="card-body">
+                            <a [href]="launch.links.reddit_launch"><span>{{launch.links.reddit_launch}}</span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="pane-F" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-F">
+                    <div class="card-header" role="tab" id="heading-F">
+                        <h5 class="mb-0">
+                            <a class="collapsed" data-toggle="collapse" href="#collapse-F" 
+                               aria-expanded="false" aria-controls="collapse-F">
+                                Reddit media
+                            </a>
+                        </h5>
+                    </div>
+                    <div id="collapse-F" class="collapse" role="tabpanel" data-parent="#pane-F" aria-labelledby="heading-F">
+                        <div class="card-body">
+                            <a [href]="launch.links.reddit_media"><span>{{launch.links.reddit_media}}</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+        <button routerLink="/launches" type="button" class="btn btn-outline-danger btn-block">Back</button>
+  </div>
+</div>

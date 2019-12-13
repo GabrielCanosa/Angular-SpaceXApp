@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding&display=swap');
+
+ul {
+    list-style-type: none;
+}
+p{
+    font-family: 'Nanum Gothic Coding', monospace;
+    font-weight: bold;
+}

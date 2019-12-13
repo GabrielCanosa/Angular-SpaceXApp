@@ -1,0 +1,13 @@
+<div class="carousel slide" data-ride="carousel" data-interval="7000">
+  <div class="carousel-inner">
+    <div *ngFor="let image of rocket.flickr_images; let i = index" 
+          class="carousel-item" [ngClass]="{'active' : i == 1}">
+        <img [src]="image" class="d-block w-100">
+      <div class="carousel-caption d-none d-md-block carousel-text">
+          <h5>{{rocket.rocket_name}}</h5>
+          <a [href]="rocket.wikipedia"><p>{{rocket.wikipedia}}</p></a>
+      </div>
+    </div>
+  </div>
+</div>
+<button routerLink="/rockets" type="button" class="btn btn-outline-danger btn-block">Back</button>

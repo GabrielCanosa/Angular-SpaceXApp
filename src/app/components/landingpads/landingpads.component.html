@@ -1,0 +1,41 @@
+<!-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3506.7910824845662!2d-80.54663268544378!3d28.485837697457022!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sar!4v1573435508611!5m2!1ses-419!2sar" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe> -->
+<!-- 
+28.485833
+-80.544444
+ -->
+
+
+<!-- <div class="card" *ngFor="let landingpad of landingPads">
+    <div class="card-header">
+        <p>{{landingpad.full_name}}</p>
+    </div>
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+        <p>{{landingpad.details}}</p>
+        <footer class="blockquote-footer">
+          <p>Succesfull landings: {{landingpad.successful_landings}}</p>
+          <cite title="Source Title">
+            <p>{{landingpad.location.name}}, {{landingpad.location.region}}.</p>
+          </cite>
+        </footer>
+      </blockquote>
+    </div>
+  </div> -->
+<div class="panel">
+  <div class="panel-group" *ngFor="let landingpad of landingPads">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" [attr.href]="'#' + landingpad.id">{{landingpad.full_name}}</a>
+        </h4>
+      </div>
+      <div [attr.id]="landingpad.id" class="panel-collapse collapse">
+          <div class="panel-body">
+              <p>Succesfull landings: {{landingpad.successful_landings}}</p>
+              <p>{{landingpad.details}}</p>
+          </div>
+          <div class="panel-footer"><p>{{landingpad.location.name}}, {{landingpad.location.region}}.</p></div>
+      </div>
+    </div>
+  </div>
+</div>

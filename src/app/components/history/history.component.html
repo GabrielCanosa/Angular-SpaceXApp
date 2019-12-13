@@ -1,0 +1,35 @@
+<!-- <div class="row">
+  <div class="col-4">
+    <div class="list-group list-group-horizontal" role="tablist" [class.active]="active === i" 
+         (click)="onClick(i)" *ngFor="let item of historyItems; let i = index;">
+      <a class="list-group-item list-group-item-action" data-toggle="list" [attr.href]="item.id" role="tab">
+        {{item.title}}
+      </a>
+    </div>
+  </div>
+  <div class="col-8">
+    <div class="tab-content" *ngFor="let item of historyItems; let i = index;">
+      <div class="tab-pane fade show" [attr.id]="item.id" role="tabpanel" >
+        {{item.details}}
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+<div id="list-example" class="list-group">
+  <a class="list-group-item list-group-item-action" [attr.href]="list-item-1"
+     *ngFor="let item of historyItems; let i = index;">
+     {{item.title}}
+  </a>
+</div>
+<div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example">
+  <div *ngFor="let item of historyItems; let i = index;">
+      <h4 [attr.id] ="'list-item-'+'i'">
+          {{item.title}}
+      </h4>
+      <p>
+        {{item.details}}
+      </p>
+  </div>
+</div>

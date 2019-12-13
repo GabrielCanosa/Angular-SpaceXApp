@@ -1,0 +1,10 @@
+<div class="card-group">
+  <div class="card" *ngFor="let rocket of rockets">
+      <img [src]="rocket.flickr_images[0]" class="card-img-top" alt="..." (click)="GetRocketDetails(rocket.rocket_id)">
+    <div class="card-body">
+      <h5 class="card-title">{{rocket.rocket_name}}</h5>
+      <p class="card-text">{{rocket.description}}</p>
+      <p class="card-text"><small class="text-muted">{{rocket.company}}</small></p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="jumbotron jumbotron-fluid">
+    <h5>CEO and founder: {{companyData.ceo}}</h5>
+    <h6>founded {{companyData.name}} in {{companyData.founded}}</h6>
+    <span>{{companyData.summary}}</span>
+  </div>
+</div>
+<div class="row">
+  <div class="col-8">
+    <div class="jumbotron jumbotron-fluid">
+      <span><b>Address:</b> {{companyData.headquarters.address}}, {{companyData.headquarters.city}}, {{companyData.headquarters.state}}.</span>
+      <br/>
+    </div>
+  </div>
+  <div class="col-4">
+      <div class="jumbotron jumbotron-fluid">
+        <span>Valuation: {{companyData.valuation | money}}</span>  
+      </div>
+  </div>
+</div>

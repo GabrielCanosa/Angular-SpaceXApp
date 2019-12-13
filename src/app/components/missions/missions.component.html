@@ -1,0 +1,36 @@
+<!-- <div class="text-center">
+  <ul *ngFor="let mission of missions">
+    <li>
+      <p>
+        <a href="#" class="tooltip" data-toggle="tooltip" data-placement="right" title="Tooltip on right">
+          {{mission.mission_name}}
+        </a>
+      </p>
+    </li>
+  </ul>
+</div> -->
+
+<div class="row">
+  <div class="col-4">
+    <div class="list-group" id="list-tab" role="tablist">
+      <a *ngFor="let mission of missions; let i = index" 
+          class="list-group-item list-group-item-action" [id]="mission.mission_name" data-toggle="list" 
+          [href]="mission.mission_name | addSharp" role="tab" [attr.aria-controls]="mission.mission_name" 
+          [ngClass]="{'active' : i == 0}" (click)="getMissionDescription(mission.mission_name)">
+        {{mission.mission_name}}
+      </a>
+    </div>
+  </div>
+
+  <div class="col-8">
+    <div class="tab-content" id="nav-tabContent">
+      <div *ngFor="let mission of missions; let i = index" 
+           class="tab-pane fade" role="tabpanel" [ngClass]="{'show active' : i == 0}">
+        <p>{{mission.description}}</p>
+        <a [href]="mission.website"><p>{{mission.website}}</p></a>
+        <a [href]="mission.twitter"><p>{{mission.twitter}}</p></a>
+        <a [href]="mission.wikipedia"><p>{{mission.wikipedia}}</p></a>
+      </div>
+    </div>
+  </div>
+</div>
