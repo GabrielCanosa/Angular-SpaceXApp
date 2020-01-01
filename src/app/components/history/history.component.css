@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Changa&display=swap');
+
+ul {
+    list-style-type: none;
+}
+
+li{
+    font-family: 'Changa', sans-serif;
+}
+
+li span{
+    font-style: italic;
+    color: #9e9e9e;
+}
+
+li span{
+    display: none;
+}
+
+li:hover span{
+    display: block;
+}
+
