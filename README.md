@@ -1,4 +1,4 @@
-# Movies App
+# SpaceX App
 
 Esta es mi tercera pagina hecha con Angular.
 Practicando consumo de datos de una web api, inyeccion de dependencias, pipes, etc.
